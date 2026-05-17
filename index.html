@@ -6,80 +6,124 @@
   <title>NouerA (ヌエラ) OFFICIAL FAN PAGE</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0a0f; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; }
+    body { background: #0a0808; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; }
 
     header {
-      background: linear-gradient(135deg, #0d0d1a, #1a1a2e);
+      background: linear-gradient(135deg, #0f0808, #1e0a0a, #2a0f0f);
       text-align: center;
-      padding: 60px 20px;
-      border-bottom: 1px solid #2a2a4a;
+      padding: 70px 20px;
+      border-bottom: 1px solid #4a1a1a;
+      position: relative;
+      overflow: hidden;
     }
-    header h1 { font-size: 2.8em; letter-spacing: 0.3em; color: #fff; }
-    header p { color: #7a7aaa; margin-top: 10px; letter-spacing: 0.2em; font-size: 0.9em; }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(180,20,20,0.15) 0%, transparent 70%);
+    }
+    header h1 {
+      font-size: 3.2em;
+      letter-spacing: 0.4em;
+      color: #fff;
+      position: relative;
+      text-shadow: 0 0 40px rgba(220,50,50,0.4);
+    }
+    header p { color: #aa6666; margin-top: 12px; letter-spacing: 0.25em; font-size: 0.85em; }
 
     nav {
-      background: #111122;
+      background: #0d0808;
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       padding: 16px;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #2a2a4a;
+      border-bottom: 1px solid #3a1010;
     }
-    nav a { color: #aaaacc; text-decoration: none; letter-spacing: 0.1em; font-size: 0.9em; }
-    nav a:hover { color: #ffffff; }
+    nav a {
+      color: #aa7777;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      font-size: 0.85em;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #ff5555; }
 
     section {
       max-width: 900px;
-      margin: 60px auto;
+      margin: 70px auto;
       padding: 0 20px;
     }
     section h2 {
-      font-size: 1.4em;
-      letter-spacing: 0.3em;
-      color: #8888cc;
-      border-left: 3px solid #4444aa;
+      font-size: 1.3em;
+      letter-spacing: 0.4em;
+      color: #cc4444;
+      border-left: 3px solid #cc2222;
       padding-left: 14px;
       margin-bottom: 30px;
+      text-transform: uppercase;
     }
 
     /* メンバー */
     .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .member-card {
-      background: #111122;
-      border: 1px solid #2a2a4a;
-      border-radius: 8px;
+      background: #110a0a;
+      border: 1px solid #3a1515;
+      border-radius: 6px;
       padding: 24px 16px;
       text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; }
-    .member-card .birthday { font-size: 0.8em; color: #7a7aaa; margin-bottom: 4px; }
-    .member-card .country { font-size: 0.8em; color: #5a5a8a; }
+    .member-card:hover { border-color: #cc2222; transform: translateY(-4px); }
+    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; font-weight: bold; }
+    .member-card .birthday { font-size: 0.8em; color: #886666; margin-bottom: 4px; }
+    .member-card .country { font-size: 0.85em; color: #664444; }
 
     /* アルバム */
     .albums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
     .album-card {
-      background: #111122;
-      border: 1px solid #2a2a4a;
-      border-radius: 8px;
+      background: #110a0a;
+      border: 1px solid #3a1515;
+      border-radius: 6px;
       padding: 24px 20px;
       cursor: pointer;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .album-card:hover { border-color: #6666cc; transform: translateY(-3px); }
-    .album-card .album-type { font-size: 0.75em; color: #6666aa; letter-spacing: 0.1em; margin-bottom: 8px; }
-    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 8px; line-height: 1.4; }
-    .album-card .date { color: #7a7aaa; font-size: 0.8em; }
-    .album-card .hint { color: #4a4a7a; font-size: 0.75em; margin-top: 12px; }
+    .album-card:hover { border-color: #cc2222; transform: translateY(-4px); }
+    .album-card .album-type { font-size: 0.72em; color: #884444; letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase; }
+    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 8px; line-height: 1.5; font-weight: bold; }
+    .album-card .date { color: #886666; font-size: 0.8em; }
+    .album-card .hint { color: #553333; font-size: 0.75em; margin-top: 14px; }
+
+    /* イベント */
+    .events { display: flex; flex-direction: column; gap: 12px; }
+    .event-item {
+      background: #110a0a;
+      border: 1px solid #3a1515;
+      border-radius: 6px;
+      padding: 18px 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      transition: border-color 0.2s;
+    }
+    .event-item:hover { border-color: #cc2222; }
+    .event-item .event-date { color: #cc4444; font-size: 0.85em; min-width: 90px; font-weight: bold; }
+    .event-item .event-name { color: #fff; font-size: 0.95em; }
+    .event-item .event-place { color: #886666; font-size: 0.8em; margin-top: 4px; }
 
     footer {
       text-align: center;
       padding: 40px;
-      color: #444466;
+      color: #443333;
       font-size: 0.8em;
-      border-top: 1px solid #1a1a2e;
+      border-top: 1px solid #1e0a0a;
       margin-top: 60px;
     }
   </style>
@@ -99,7 +143,7 @@
 
 <!-- メンバー -->
 <section id="members">
-  <h2>MEMBERS</h2>
+  <h2>Members</h2>
   <div class="members">
     <div class="member-card">
       <div class="name">ギヒョン</div>
@@ -141,28 +185,28 @@
 
 <!-- アルバム -->
 <section id="albums">
-  <h2>ALBUMS</h2>
+  <h2>Albums</h2>
   <div class="albums">
     <div class="album-card">
-      <div class="album-type">1ST DIGITAL SINGLE</div>
+      <div class="album-type">1st Digital Single</div>
       <div class="title">무한대（無限大）</div>
       <div class="date">2024.12.14 Release</div>
       <div class="hint">▶ タップで詳細へ（準備中）</div>
     </div>
     <div class="album-card">
-      <div class="album-type">1ST MINI ALBUM</div>
+      <div class="album-type">1st Mini Album</div>
       <div class="title">Chapter: New is Now</div>
       <div class="date">2025.02.26 Release</div>
       <div class="hint">▶ タップで詳細へ（準備中）</div>
     </div>
     <div class="album-card">
-      <div class="album-type">2ND MINI ALBUM</div>
+      <div class="album-type">2nd Mini Album</div>
       <div class="title">n: number of cases</div>
       <div class="date">2025.06.30 Release</div>
       <div class="hint">▶ タップで詳細へ（準備中）</div>
     </div>
     <div class="album-card">
-      <div class="album-type">3RD MINI ALBUM</div>
+      <div class="album-type">3rd Mini Album</div>
       <div class="title">POP IT LIKE</div>
       <div class="date">2026.03.09 Release</div>
       <div class="hint">▶ タップで詳細へ（準備中）</div>
@@ -172,8 +216,8 @@
 
 <!-- イベント -->
 <section id="events">
-  <h2>EVENTS</h2>
-  <p style="color:#5a5a8a; font-size:0.9em;">イベント情報は準備中です。</p>
+  <h2>Events</h2>
+  <p style="color:#553333; font-size:0.9em;">イベント情報は準備中です。</p>
 </section>
 
 <footer>
