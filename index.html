@@ -111,15 +111,65 @@
       background: #150000;
       border: 1px solid #440000;
       border-radius: 6px;
-      padding: 20px 16px;
+      overflow: hidden;
       cursor: pointer;
       transition: border-color 0.2s, transform 0.2s;
     }
     .album-card:hover { border-color: #ff0000; transform: translateY(-4px); }
-    .album-card .album-type { font-size: 0.7em; color: #aa3333; letter-spacing: 0.08em; margin-bottom: 8px; text-transform: uppercase; font-weight: 400; }
-    .album-card .title { color: #fff; font-size: 0.95em; margin-bottom: 8px; line-height: 1.4; }
+    .album-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      display: block;
+    }
+    .album-card .album-info { padding: 14px 16px; }
+    .album-card .album-type { font-size: 0.7em; color: #aa3333; letter-spacing: 0.08em; margin-bottom: 6px; text-transform: uppercase; font-weight: 400; }
+    .album-card .title { color: #fff; font-size: 0.95em; margin-bottom: 6px; line-height: 1.4; }
     .album-card .date { color: #aa5555; font-size: 0.78em; font-weight: 400; }
-    .album-card .hint { color: #552222; font-size: 0.72em; margin-top: 12px; font-weight: 400; }
+    .album-card .hint { color: #552222; font-size: 0.72em; margin-top: 10px; font-weight: 400; }
+
+    /* イベント */
+    .events { display: flex; flex-direction: column; gap: 16px; }
+    .event-item {
+      background: #150000;
+      border: 1px solid #440000;
+      border-radius: 6px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .event-item:hover { border-color: #ff0000; }
+    .event-new {
+      display: inline-block;
+      background: #cc0000;
+      color: #fff;
+      font-size: 0.7em;
+      padding: 2px 8px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+    .event-title {
+      color: #fff;
+      font-size: 1em;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .event-detail {
+      color: #aa5555;
+      font-size: 0.82em;
+      font-weight: 400;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .event-link a {
+      color: #ff4444;
+      font-size: 0.82em;
+      font-weight: 400;
+      text-decoration: none;
+      border-bottom: 1px solid #440000;
+      padding-bottom: 2px;
+    }
+    .event-link a:hover { color: #ff8888; }
 
     footer {
       text-align: center;
@@ -216,28 +266,40 @@
   <h2>Albums</h2>
   <div class="albums">
     <div class="album-card">
-      <div class="album-type">1st Digital Single</div>
-      <div class="title">무한대（無限大）</div>
-      <div class="date">2024.12.14 Release</div>
-      <div class="hint">▶ タップで詳細へ（準備中）</div>
+      <img src="IMG_7927.jpeg" alt="무한대">
+      <div class="album-info">
+        <div class="album-type">1st Digital Single</div>
+        <div class="title">무한대（無限大）</div>
+        <div class="date">2024.12.14 Release</div>
+        <div class="hint">▶ タップで詳細へ（準備中）</div>
+      </div>
     </div>
     <div class="album-card">
-      <div class="album-type">1st Mini Album</div>
-      <div class="title">Chapter: New is Now</div>
-      <div class="date">2025.02.26 Release</div>
-      <div class="hint">▶ タップで詳細へ（準備中）</div>
+      <img src="IMG_7928.jpeg" alt="Chapter: New is Now">
+      <div class="album-info">
+        <div class="album-type">1st Mini Album</div>
+        <div class="title">Chapter: New is Now</div>
+        <div class="date">2025.02.26 Release</div>
+        <div class="hint">▶ タップで詳細へ（準備中）</div>
+      </div>
     </div>
     <div class="album-card">
-      <div class="album-type">2nd Mini Album</div>
-      <div class="title">n: number of cases</div>
-      <div class="date">2025.06.30 Release</div>
-      <div class="hint">▶ タップで詳細へ（準備中）</div>
+      <img src="IMG_7929.jpeg" alt="n: number of cases">
+      <div class="album-info">
+        <div class="album-type">2nd Mini Album</div>
+        <div class="title">n: number of cases</div>
+        <div class="date">2025.06.30 Release</div>
+        <div class="hint">▶ タップで詳細へ（準備中）</div>
+      </div>
     </div>
     <div class="album-card">
-      <div class="album-type">3rd Mini Album</div>
-      <div class="title">POP IT LIKE</div>
-      <div class="date">2026.03.09 Release</div>
-      <div class="hint">▶ タップで詳細へ（準備中）</div>
+      <img src="IMG_7930.jpeg" alt="POP IT LIKE">
+      <div class="album-info">
+        <div class="album-type">3rd Mini Album</div>
+        <div class="title">POP IT LIKE</div>
+        <div class="date">2026.03.09 Release</div>
+        <div class="hint">▶ タップで詳細へ（準備中）</div>
+      </div>
     </div>
   </div>
 </section>
@@ -245,7 +307,21 @@
 <!-- イベント -->
 <section id="events">
   <h2>Events</h2>
-  <p style="color:#552222; font-size:0.9em; font-weight:400;">イベント情報は準備中です。</p>
+  <div class="events">
+    <div class="event-item">
+      <span class="event-new">NEW</span>
+      <div class="event-title">'CATCH THE WAVE' WORLD TOUR in JAPAN 開催決定</div>
+      <div class="event-detail">
+        2026年7月11日(土) @CLUB CITTA'<br>
+        ●第1部 16:00開演<br>
+        ●第2部 19:00開演<br><br>
+        5月15日(金)よりFC最速先行受付スタート！
+      </div>
+      <div class="event-link">
+        <a href="https://nouera-official.jp/news/detail/78664" target="_blank">詳しくはこちら →</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
