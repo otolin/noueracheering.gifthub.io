@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IDOL GROUP NAME</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0a0f; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; }
+
+    header {
+      background: linear-gradient(135deg, #0d0d1a, #1a1a2e);
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    header h1 { font-size: 2.8em; letter-spacing: 0.3em; color: #fff; }
+    header p { color: #7a7aaa; margin-top: 10px; letter-spacing: 0.2em; }
+
+    nav {
+      background: #111122;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    nav a { color: #aaaacc; text-decoration: none; letter-spacing: 0.1em; font-size: 0.9em; }
+    nav a:hover { color: #ffffff; }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 1.4em;
+      letter-spacing: 0.3em;
+      color: #8888cc;
+      border-left: 3px solid #4444aa;
+      padding-left: 14px;
+      margin-bottom: 30px;
+    }
+
+    /* メンバー */
+    .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .member-card {
+      background: #111122;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+    }
+    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 6px; }
+    .member-card .role { font-size: 0.8em; color: #7a7aaa; }
+
+    /* アルバム */
+    .albums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .album-card {
+      background: #111122;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 6px; }
+    .album-card .date { color: #7a7aaa; font-size: 0.8em; }
+
+    /* イベント */
+    .events { display: flex; flex-direction: column; gap: 14px; }
+    .event-item {
+      background: #111122;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 18px 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .event-item .event-date { color: #8888cc; font-size: 0.85em; min-width: 90px; }
+    .event-item .event-name { color: #fff; }
+    .event-item .event-place { color: #7a7aaa; font-size: 0.8em; margin-top: 4px; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #444466;
+      font-size: 0.8em;
+      border-top: 1px solid #1a1a2e;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>IDOL GROUP NAME</h1>
+  <p>OFFICIAL FAN PAGE</p>
+</header>
+
+<nav>
+  <a href="#members">MEMBERS</a>
+  <a href="#albums">ALBUMS</a>
+  <a href="#events">EVENTS</a>
+</nav>
+
+<!-- メンバー -->
+<section id="members">
+  <h2>MEMBERS</h2>
+  <div class="members">
+    <div class="member-card">
+      <div class="name">メンバー名 1</div>
+      <div class="role">リーダー / ボーカル</div>
+    </div>
+    <div class="member-card">
+      <div class="name">メンバー名 2</div>
+      <div class="role">ダンス / ボーカル</div>
+    </div>
+    <div class="member-card">
+      <div class="name">メンバー名 3</div>
+      <div class="role">ラップ / パフォーマー</div>
+    </div>
+  </div>
+</section>
+
+<!-- アルバム -->
+<section id="albums">
+  <h2>ALBUMS</h2>
+  <div class="albums">
+    <div class="album-card">
+      <div class="title">アルバムタイトル 1</div>
+      <div class="date">2024.04.10 Release</div>
+    </div>
+    <div class="album-card">
+      <div class="title">アルバムタイトル 2</div>
+      <div class="date">2023.11.22 Release</div>
+    </div>
+  </div>
+</section>
+
+<!-- イベント -->
+<section id="events">
+  <h2>EVENTS</h2>
+  <div class="events">
+    <div class="event-item">
+      <div class="event-date">2025.06.15</div>
+      <div>
+        <div class="event-name">イベント名 1</div>
+        <div class="event-place">東京・〇〇ホール</div>
+      </div>
+    </div>
+    <div class="event-item">
+      <div class="event-date">2025.07.20</div>
+      <div>
+        <div class="event-name">イベント名 2</div>
+        <div class="event-place">大阪・〇〇アリーナ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 IDOL GROUP NAME FAN PAGE
+</footer>
+
+</body>
+</html>
