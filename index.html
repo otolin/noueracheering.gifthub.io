@@ -230,28 +230,55 @@
     .modal-tracklist { list-style: none; border-top: 1px solid #330000; padding-top: 14px; }
     .modal-tracklist li {
       display: flex;
-      gap: 12px;
-      padding: 8px 0;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px 0;
       border-bottom: 1px solid #1e0000;
-      font-size: 0.85em;
-      font-weight: 400;
     }
-    .modal-tracklist li .track-num { color: #553333; min-width: 24px; }
-    .modal-tracklist li .track-name { color: #ddd; }
-    .modal-links { margin-top: 16px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .modal-link-btn {
-      display: inline-block;
-      background: #300000;
-      border: 1px solid #660000;
+    .track-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .track-num { color: #553333; font-size: 0.75em; min-width: 22px; font-weight: 400; }
+    .track-name { color: #fff; font-size: 0.9em; }
+    .track-apple {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #1e0000;
+      border: 1px solid #550000;
       border-radius: 4px;
-      padding: 8px 16px;
+      padding: 3px 9px;
       color: #ff6666;
       text-decoration: none;
-      font-size: 0.8em;
-      letter-spacing: 0.06em;
-      transition: background 0.2s, border-color 0.2s;
+      font-size: 0.68em;
+      font-weight: 400;
+      white-space: nowrap;
+      transition: border-color 0.2s, color 0.2s;
+      flex-shrink: 0;
     }
-    .modal-link-btn:hover { background: #440000; border-color: #ff0000; color: #fff; }
+    .track-apple:hover { border-color: #ff0000; color: #fff; }
+    .track-videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-left: 32px;
+    }
+    .track-video-btn {
+      display: inline-block;
+      background: #1e0000;
+      border: 1px solid #440000;
+      border-radius: 4px;
+      padding: 3px 10px;
+      color: #aa5555;
+      text-decoration: none;
+      font-size: 0.68em;
+      font-weight: 400;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .track-video-btn:hover { border-color: #ff0000; color: #ff6666; }
 
     /* =============================================
        イベント
@@ -643,56 +670,172 @@
    ▼ 各アルバムの曲目・リンクをここで編集してください
    ▼ 新しいアルバムを追加するときは { id: 5, ... } のブロックをコピーして追記します
 ============================================== */
+/* ==============================================
+   トラックデータ構造：
+   { name: "曲名", apple: "Apple MusicのURL", videos: [ {label: "Music Video", url: "..."}, ... ] }
+   apple や videos は省略可（不要なら削除してOK）
+============================================== */
 const albumData = {
   1: {
-    img:    "IMG_7927.jpeg",
-    type:   "1st Digital Single",
-    title:  "무한대（無限大）",
-    date:   "2024.12.14 Release",
+    img:   "IMG_7927.jpeg",
+    type:  "1st Digital Single",
+    title: "무한대（無限大）",
+    date:  "2024.12.14 Release",
     tracks: [
-      "무한대（無限大）",
-      /* ▼ 曲を追加する場合は "曲名", の形式で追記してください */
-    ],
-    links: [
-      /* ▼ 配信リンクを追加する場合は下記の形式でコピーしてください
-      { label: "Spotify", url: "https://..." },
-      { label: "Apple Music", url: "https://..." }, */
+      {
+        name: "MU",
+        apple: "https://music.apple.com/jp/song/mu/1783676413",
+        videos: [
+          { label: "Performance Video", url: "https://youtu.be/zyv3yLIr1WM?si=H42DLJZfJnDU1Fsu" },
+          { label: "Stage Video",       url: "https://youtu.be/JhxGK5FkWkA?si=enakUWaGlYqIV-Lx" },
+          { label: "Practice Video",    url: "https://youtu.be/xVllwscOq3M?si=QTxnBwES-xer5Cum" }
+        ]
+      }
     ]
   },
   2: {
-    img:    "IMG_7928.jpeg",
-    type:   "1st Mini Album",
-    title:  "Chapter: New is Now",
-    date:   "2025.02.26 Release",
+    img:   "IMG_7928.jpeg",
+    type:  "1st Mini Album",
+    title: "Chapter: New is Now",
+    date:  "2025.02.26 Release",
     tracks: [
-      /* ▼ 曲名を "曲名", の形式で追記してください */
-    ],
-    links: []
+      {
+        name: "Sparkle",
+        apple: "https://music.apple.com/jp/song/sparkle/1797439210",
+        videos: [
+          { label: "Stage Video",    url: "https://youtu.be/72Kf7tJpiDg?si=we_wtytH4ZEmzAJ7" },
+          { label: "Practice Video", url: "https://youtu.be/ItJJ6af9voc?si=KWwzpn0ooDlGwHbG" }
+        ]
+      },
+      {
+        name: "N.I.N（New is Now）",
+        apple: "https://music.apple.com/jp/song/n-i-n-new-is-now/1797439212",
+        videos: [
+          { label: "Music Video",    url: "https://youtu.be/nfI7SX5n03c?si=h93fIXc9aoknvdQ3" },
+          { label: "Stage Video",    url: "https://youtu.be/YnGEXCBfi1g?si=12f-L5GWkQezg1Mk" },
+          { label: "Practice Video", url: "https://youtu.be/c7nsSbjTq4s?si=mJTSW8ZaoFI5drfY" }
+        ]
+      },
+      {
+        name: "Bring the Crunk",
+        apple: "https://music.apple.com/jp/song/bring-the-crunk/1797439213",
+        videos: [
+          { label: "Stage Video",    url: "https://youtu.be/0Fg-tq2zJoA?si=TtQzLGI4IbaLeZVE" },
+          { label: "Practice Video", url: "https://youtu.be/i2eC-uiJJwQ?si=m7uqlDQGrRGBMjOd" }
+        ]
+      },
+      {
+        name: "MU",
+        apple: "https://music.apple.com/jp/song/mu/1797439215"
+      },
+      {
+        name: "Jet Stream",
+        apple: "https://music.apple.com/jp/song/jet-stream/1797439216"
+      },
+      {
+        name: "Pairing",
+        apple: "https://music.apple.com/jp/song/pairing/1797439217",
+        videos: [
+          { label: "Stage Video", url: "https://youtu.be/XmO6EvOFf5I?si=O7C9lXmtMkjDgxNS" }
+        ]
+      }
+    ]
   },
   3: {
-    img:    "IMG_7929.jpeg",
-    type:   "2nd Mini Album",
-    title:  "n: number of cases",
-    date:   "2025.06.30 Release",
-    tracks: [],
-    links: []
+    img:   "IMG_7929.jpeg",
+    type:  "2nd Mini Album",
+    title: "n: number of cases",
+    date:  "2025.06.30 Release",
+    tracks: [
+      {
+        name: "MYSELF",
+        apple: "https://music.apple.com/jp/song/myself/1821576844",
+        videos: [
+          { label: "Track Video", url: "https://youtu.be/hRQR93X0Sqg?si=MhcVwJp9U-qamE-s" },
+          { label: "Stage Video", url: "https://youtu.be/hrU7aSZjjYc?si=ZuPQxg3be2LqEWa-" }
+        ]
+      },
+      {
+        name: "n（number of cases）",
+        apple: "https://music.apple.com/jp/song/n-number-of-cases/1821576847",
+        videos: [
+          { label: "Music Video",        url: "https://youtu.be/uVFoKBZh3tU?si=LPdjuow8CpYe9fDw" },
+          { label: "Stage Video",        url: "https://youtu.be/00DQODXjgHA?si=OQ8Lo1iIrtLxZn4u" },
+          { label: "Performance Video",  url: "https://youtu.be/NKrLz9x34lA?si=vjLpB28qMKGqZ8dc" },
+          { label: "Practice Video",     url: "https://youtu.be/o7oyOTUM19Q?si=aVtjZprJXB27LYKA" }
+        ]
+      },
+      {
+        name: "MAKE YOU MOVE",
+        apple: "https://music.apple.com/jp/song/make-you-move/1821576849"
+      },
+      {
+        name: "WARNING！",
+        apple: "https://music.apple.com/jp/song/warning/1821576851"
+      },
+      {
+        name: "FINALE",
+        apple: "https://music.apple.com/jp/song/finale/1821576853"
+      },
+      {
+        name: "BNB（Beauty and the Beast）",
+        apple: "https://music.apple.com/jp/song/bnb-beauty-and-the-beast/1821576856",
+        videos: [
+          { label: "Performance Video",  url: "https://youtu.be/YBmM1uAJKiQ?si=i8gClT0IP1Sx9IxQ" },
+          { label: "NouerA-LOG Ver.",    url: "https://youtu.be/OXJyffb0Ybc?si=vGR2hbfstMKW5qEp" },
+          { label: "Stage Video",        url: "https://youtu.be/3G-veIXVGgA?si=hAZ2I2PcpogZbJXU" },
+          { label: "Practice Video",     url: "https://youtu.be/rcgei-XUQFY?si=I4iIVzQn_s7G9In8" }
+        ]
+      }
+    ]
   },
   4: {
-    img:    "IMG_7930.jpeg",
-    type:   "3rd Mini Album",
-    title:  "POP IT LIKE",
-    date:   "2026.03.09 Release",
-    tracks: [],
-    links: []
+    img:   "IMG_7930.jpeg",
+    type:  "3rd Mini Album",
+    title: "POP IT LIKE",
+    date:  "2026.03.09 Release",
+    tracks: [
+      {
+        name: "POP IT LIKE",
+        apple: "https://music.apple.com/jp/song/pop-it-like/1880322071",
+        videos: [
+          { label: "Music Video",       url: "https://youtu.be/FeU8m9YEVSY?si=DU2u1zvmQul3Kf5j" },
+          { label: "Performance Video", url: "https://youtu.be/VCnwGcng23s?si=8lVpAYz6s_5vSgId" },
+          { label: "Stage Video",       url: "https://youtu.be/6z8Dp4ZxqTA?si=DyuICYhe1GVbCKD-" },
+          { label: "Practice Video",    url: "https://youtu.be/fbnV-Xr7ho0?si=NzaeoGFhAtPD11BY" }
+        ]
+      },
+      {
+        name: "SILHOUETTE",
+        apple: "https://music.apple.com/jp/song/silhouette/1880322074"
+      },
+      {
+        name: "A-LIST",
+        apple: "https://music.apple.com/jp/song/a-list/1880322075",
+        videos: [
+          { label: "Performance Video", url: "https://youtu.be/2XWrVeqB3mg?si=yMyH5yx6b-4anrwK" },
+          { label: "Stage Video",       url: "https://youtu.be/KsorjK95rog?si=nhm5Wnp4h_tQFPW7" }
+        ]
+      },
+      {
+        name: "WE ARE YOUNG",
+        apple: "https://music.apple.com/jp/song/we-are-young/1880322077",
+        videos: [
+          { label: "Track Video", url: "https://youtu.be/VLoJtXH1a9I?si=QawDXNNUJ5Iyn_Rh" },
+          { label: "Stage Video", url: "https://youtu.be/BUqkyDGWpR8?si=pEx8im6qWt2VaBON" }
+        ]
+      }
+    ]
   }
   /* ▼ 新アルバムを追加する場合はここにコピー
   ,5: {
-    img:    "画像ファイル名.jpeg",
-    type:   "4th Mini Album",
-    title:  "タイトル",
-    date:   "YYYY.MM.DD Release",
-    tracks: ["曲名1", "曲名2"],
-    links:  [{ label: "Spotify", url: "https://..." }]
+    img:   "画像ファイル名.jpeg",
+    type:  "Xth Mini Album",
+    title: "タイトル",
+    date:  "YYYY.MM.DD Release",
+    tracks: [
+      { name: "曲名", apple: "https://...", videos: [{ label: "Music Video", url: "https://..." }] }
+    ]
   }
   */
 };
@@ -709,29 +852,49 @@ function openAlbum(id) {
 
   const tl = document.getElementById("modal-tracklist");
   tl.innerHTML = "";
-  if (d.tracks.length > 0) {
-    d.tracks.forEach((t, i) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<span class="track-num">${String(i+1).padStart(2,"0")}</span><span class="track-name">${t}</span>`;
-      tl.appendChild(li);
-    });
-  } else {
+  document.getElementById("modal-links").innerHTML = "";
+
+  if (!d.tracks || d.tracks.length === 0) {
     const li = document.createElement("li");
-    li.style.color = "#553333";
-    li.style.fontSize = "0.8em";
+    li.style.cssText = "color:#553333;font-size:0.8em;font-weight:400;";
     li.textContent = "トラックリスト準備中";
     tl.appendChild(li);
-  }
+  } else {
+    d.tracks.forEach((t, i) => {
+      const li = document.createElement("li");
 
-  const ml = document.getElementById("modal-links");
-  ml.innerHTML = "";
-  d.links.forEach(l => {
-    const a = document.createElement("a");
-    a.href = l.url; a.target = "_blank"; a.rel = "noopener";
-    a.className = "modal-link-btn";
-    a.textContent = "▶ " + l.label;
-    ml.appendChild(a);
-  });
+      // 曲名ヘッダー行
+      const header = document.createElement("div");
+      header.className = "track-header";
+      header.innerHTML = `<span class="track-num">${String(i+1).padStart(2,"0")}</span><span class="track-name">${t.name}</span>`;
+
+      // Apple Music ボタン
+      if (t.apple) {
+        const ap = document.createElement("a");
+        ap.href = t.apple; ap.target = "_blank"; ap.rel = "noopener";
+        ap.className = "track-apple";
+        ap.innerHTML = "♪ Apple Music";
+        header.appendChild(ap);
+      }
+      li.appendChild(header);
+
+      // 動画リンク
+      if (t.videos && t.videos.length > 0) {
+        const vw = document.createElement("div");
+        vw.className = "track-videos";
+        t.videos.forEach(v => {
+          const a = document.createElement("a");
+          a.href = v.url; a.target = "_blank"; a.rel = "noopener";
+          a.className = "track-video-btn";
+          a.textContent = "▶ " + v.label;
+          vw.appendChild(a);
+        });
+        li.appendChild(vw);
+      }
+
+      tl.appendChild(li);
+    });
+  }
 
   document.getElementById("albumModal").classList.add("open");
   document.body.style.overflow = "hidden";
