@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NouerA (ヌエラ) OFFICIAL FAN PAGE</title>
+  <title>NouerA (ヌエラ) FAN PAGE</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0d0000; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
@@ -13,7 +13,7 @@
       text-align: center;
       overflow: hidden;
     }
-    header img {
+    header img.top-photo {
       width: 100%;
       max-height: 520px;
       object-fit: cover;
@@ -29,13 +29,11 @@
       padding: 40px 20px 30px;
       background: linear-gradient(transparent, rgba(13,0,0,0.95));
     }
-    header h1 {
-      font-size: 3.5em;
-      letter-spacing: 0.2em;
-      color: #fff;
-      text-shadow: 0 0 30px rgba(255,30,30,0.5);
+    header .header-text img.logo {
+      height: 70px;
+      object-fit: contain;
     }
-    header p { color: #ff6666; margin-top: 8px; letter-spacing: 0.1em; font-size: 0.85em; font-weight: 400; }
+    header p { color: #ff6666; margin-top: 10px; letter-spacing: 0.1em; font-size: 0.85em; font-weight: 400; }
 
     nav {
       background: #0d0000;
@@ -78,14 +76,22 @@
       background: #150000;
       border: 1px solid #440000;
       border-radius: 6px;
-      padding: 24px 16px;
+      overflow: hidden;
       text-align: center;
       transition: border-color 0.2s, transform 0.2s;
     }
     .member-card:hover { border-color: #ff0000; transform: translateY(-4px); }
-    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; }
-    .member-card .birthday { font-size: 0.8em; color: #aa5555; margin-bottom: 4px; font-weight: 400; }
-    .member-card .country { font-size: 0.85em; color: #773333; font-weight: 400; }
+    .member-card img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .member-card .info { padding: 14px 10px; }
+    .member-card .name { font-size: 1.05em; color: #fff; margin-bottom: 6px; }
+    .member-card .birthday { font-size: 0.78em; color: #aa5555; margin-bottom: 4px; font-weight: 400; }
+    .member-card .country { font-size: 0.82em; color: #773333; font-weight: 400; }
 
     /* アルバム */
     .albums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
@@ -117,10 +123,10 @@
 <body>
 
 <header>
-  <img src="IMG_7906.png" alt="NouerA">
+  <img class="top-photo" src="IMG_7906.png" alt="NouerA">
   <div class="header-text">
-    <h1>NouerA</h1>
-    <p>ヌエラ　／ FAN PAGE</p>
+    <img class="logo" src="IMG_7908.png" alt="NouerA">
+    <p>ヌエラ　／　FAN PAGE</p>
   </div>
 </header>
 
@@ -135,39 +141,60 @@
   <h2>Members</h2>
   <div class="members">
     <div class="member-card">
-      <div class="name">ギヒョン</div>
-      <div class="birthday">2003.03.31</div>
-      <div class="country">🇰🇷 韓国</div>
+      <img src="IMG_7909.png" alt="ギヒョン">
+      <div class="info">
+        <div class="name">ギヒョン</div>
+        <div class="birthday">2003.03.31</div>
+        <div class="country">🇰🇷 韓国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">ジュンピョ</div>
-      <div class="birthday">2003.05.25</div>
-      <div class="country">🇰🇷 韓国</div>
+      <img src="IMG_7910.png" alt="ジュンピョ">
+      <div class="info">
+        <div class="name">ジュンピョ</div>
+        <div class="birthday">2003.05.25</div>
+        <div class="country">🇰🇷 韓国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">ヒョンジュン</div>
-      <div class="birthday">2003.11.29</div>
-      <div class="country">🇰🇷 韓国</div>
+      <img src="IMG_7911.png" alt="ヒョンジュン">
+      <div class="info">
+        <div class="name">ヒョンジュン</div>
+        <div class="birthday">2003.11.29</div>
+        <div class="country">🇰🇷 韓国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">ユソプ</div>
-      <div class="birthday">2004.05.06</div>
-      <div class="country">🇰🇷 韓国</div>
+      <img src="IMG_7912.png" alt="ユソプ">
+      <div class="info">
+        <div class="name">ユソプ</div>
+        <div class="birthday">2004.05.06</div>
+        <div class="country">🇰🇷 韓国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">リン</div>
-      <div class="birthday">2006.12.30</div>
-      <div class="country">🇨🇳 中国</div>
+      <img src="IMG_7913.png" alt="リン">
+      <div class="info">
+        <div class="name">リン</div>
+        <div class="birthday">2006.12.30</div>
+        <div class="country">🇨🇳 中国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">ファン</div>
-      <div class="birthday">2007.11.10</div>
-      <div class="country">🇨🇳 中国</div>
+      <img src="IMG_7914.png" alt="ファン">
+      <div class="info">
+        <div class="name">ファン</div>
+        <div class="birthday">2007.11.10</div>
+        <div class="country">🇨🇳 中国</div>
+      </div>
     </div>
     <div class="member-card">
-      <div class="name">ミラク</div>
-      <div class="birthday">2008.02.13</div>
-      <div class="country">🇯🇵 日本</div>
+      <img src="IMG_7915.png" alt="ミラク">
+      <div class="info">
+        <div class="name">ミラク</div>
+        <div class="birthday">2008.02.13</div>
+        <div class="country">🇯🇵 日本</div>
+      </div>
     </div>
   </div>
 </section>
