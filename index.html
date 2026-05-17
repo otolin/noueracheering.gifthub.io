@@ -8,28 +8,35 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0d0000; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
 
-    header { text-align: center; }
+    header {
+      position: relative;
+      text-align: center;
+    }
     header img.top-photo {
       width: 100%;
       max-height: 420px;
       object-fit: cover;
       object-position: top;
       display: block;
-      opacity: 0.85;
     }
-    .logo-bar {
-background: #ffffff;
-padding: 20px;
-border-bottom: 2px solid #cc0000;
-
+    header .header-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 60px 20px 20px;
+      background: linear-gradient(transparent, rgba(13,0,0,1));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .logo-bar img.logo {
-      height: 60px;
+    header .header-text img.logo {
+      height: 80px;
       object-fit: contain;
+      filter: brightness(0) invert(1);
     }
-    .logo-bar p {
-      color: #cc0000;
-
+    header .header-text p {
+      color: #ff6666;
       margin-top: 8px;
       letter-spacing: 0.1em;
       font-size: 0.8em;
@@ -45,7 +52,7 @@ border-bottom: 2px solid #cc0000;
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #440000;
+      border-bottom: 2px solid #cc0000;
     }
     nav a {
       color: #ff6666;
@@ -128,8 +135,8 @@ border-bottom: 2px solid #cc0000;
 <body>
 
 <header>
-  <img class="top-photo" src="IMG_7906.png" alt="NouerA">
-  <div class="logo-bar">
+  <img class="top-photo" src="IMG_7906.jpeg" alt="NouerA">
+  <div class="header-text">
     <img class="logo" src="IMG_7908.png" alt="NouerA">
     <p>ヌエラ　／　FAN PAGE</p>
   </div>
