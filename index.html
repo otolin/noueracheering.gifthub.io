@@ -14,4 +14,171 @@
       padding: 60px 20px;
       border-bottom: 1px solid #2a2a4a;
     }
-    header h1 { font-size: 2.8em​​​​​​​​​​​​​​​​
+    header h1 { font-size: 2.8em; letter-spacing: 0.3em; color: #fff; }
+    header p { color: #7a7aaa; margin-top: 10px; letter-spacing: 0.2em; font-size: 0.9em; }
+
+    nav {
+      background: #111122;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #2a2a4a;
+    }
+    nav a { color: #aaaacc; text-decoration: none; letter-spacing: 0.1em; font-size: 0.9em; }
+    nav a:hover { color: #ffffff; }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 1.4em;
+      letter-spacing: 0.3em;
+      color: #8888cc;
+      border-left: 3px solid #4444aa;
+      padding-left: 14px;
+      margin-bottom: 30px;
+    }
+
+    /* メンバー */
+    .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+    .member-card {
+      background: #111122;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; }
+    .member-card .birthday { font-size: 0.8em; color: #7a7aaa; margin-bottom: 4px; }
+    .member-card .country { font-size: 0.8em; color: #5a5a8a; }
+
+    /* アルバム */
+    .albums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .album-card {
+      background: #111122;
+      border: 1px solid #2a2a4a;
+      border-radius: 8px;
+      padding: 24px 20px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .album-card:hover { border-color: #6666cc; transform: translateY(-3px); }
+    .album-card .album-type { font-size: 0.75em; color: #6666aa; letter-spacing: 0.1em; margin-bottom: 8px; }
+    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 8px; line-height: 1.4; }
+    .album-card .date { color: #7a7aaa; font-size: 0.8em; }
+    .album-card .hint { color: #4a4a7a; font-size: 0.75em; margin-top: 12px; }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #444466;
+      font-size: 0.8em;
+      border-top: 1px solid #1a1a2e;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>NouerA</h1>
+  <p>ヌエラ　／　OFFICIAL FAN PAGE</p>
+</header>
+
+<nav>
+  <a href="#members">MEMBERS</a>
+  <a href="#albums">ALBUMS</a>
+  <a href="#events">EVENTS</a>
+</nav>
+
+<!-- メンバー -->
+<section id="members">
+  <h2>MEMBERS</h2>
+  <div class="members">
+    <div class="member-card">
+      <div class="name">ギヒョン</div>
+      <div class="birthday">2003.03.31</div>
+      <div class="country">🇰🇷 韓国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">ジュンピョ</div>
+      <div class="birthday">2003.05.25</div>
+      <div class="country">🇰🇷 韓国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">ヒョンジュン</div>
+      <div class="birthday">2003.11.29</div>
+      <div class="country">🇰🇷 韓国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">ユソプ</div>
+      <div class="birthday">2004.05.06</div>
+      <div class="country">🇰🇷 韓国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">リン</div>
+      <div class="birthday">2006.12.30</div>
+      <div class="country">🇨🇳 中国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">ファン</div>
+      <div class="birthday">2007.11.10</div>
+      <div class="country">🇨🇳 中国</div>
+    </div>
+    <div class="member-card">
+      <div class="name">ミラク</div>
+      <div class="birthday">2008.02.13</div>
+      <div class="country">🇯🇵 日本</div>
+    </div>
+  </div>
+</section>
+
+<!-- アルバム -->
+<section id="albums">
+  <h2>ALBUMS</h2>
+  <div class="albums">
+    <div class="album-card">
+      <div class="album-type">1ST DIGITAL SINGLE</div>
+      <div class="title">무한대（無限大）</div>
+      <div class="date">2024.12.14 Release</div>
+      <div class="hint">▶ タップで詳細へ（準備中）</div>
+    </div>
+    <div class="album-card">
+      <div class="album-type">1ST MINI ALBUM</div>
+      <div class="title">Chapter: New is Now</div>
+      <div class="date">2025.02.26 Release</div>
+      <div class="hint">▶ タップで詳細へ（準備中）</div>
+    </div>
+    <div class="album-card">
+      <div class="album-type">2ND MINI ALBUM</div>
+      <div class="title">n: number of cases</div>
+      <div class="date">2025.06.30 Release</div>
+      <div class="hint">▶ タップで詳細へ（準備中）</div>
+    </div>
+    <div class="album-card">
+      <div class="album-type">3RD MINI ALBUM</div>
+      <div class="title">POP IT LIKE</div>
+      <div class="date">2026.03.09 Release</div>
+      <div class="hint">▶ タップで詳細へ（準備中）</div>
+    </div>
+  </div>
+</section>
+
+<!-- イベント -->
+<section id="events">
+  <h2>EVENTS</h2>
+  <p style="color:#5a5a8a; font-size:0.9em;">イベント情報は準備中です。</p>
+</section>
+
+<footer>
+  © 2025 NouerA FAN PAGE　／　This is an unofficial fan site.
+</footer>
+
+</body>
+</html>
