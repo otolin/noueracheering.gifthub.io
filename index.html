@@ -6,37 +6,39 @@
   <title>NouerA (ヌエラ) OFFICIAL FAN PAGE</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a0808; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; }
+    body { background: #0d0000; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
 
     header {
-      background: linear-gradient(135deg, #0f0808, #1e0a0a, #2a0f0f);
-      text-align: center;
-      padding: 70px 20px;
-      border-bottom: 1px solid #4a1a1a;
       position: relative;
+      text-align: center;
       overflow: hidden;
     }
-    header::before {
-      content: '';
+    header img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      opacity: 0.85;
+    }
+    header .header-text {
       position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 300px;
-      background: radial-gradient(ellipse, rgba(180,20,20,0.15) 0%, transparent 70%);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 40px 20px 30px;
+      background: linear-gradient(transparent, rgba(13,0,0,0.95));
     }
     header h1 {
-      font-size: 3.2em;
-      letter-spacing: 0.4em;
+      font-size: 3.5em;
+      letter-spacing: 0.2em;
       color: #fff;
-      position: relative;
-      text-shadow: 0 0 40px rgba(220,50,50,0.4);
+      text-shadow: 0 0 30px rgba(255,30,30,0.5);
     }
-    header p { color: #aa6666; margin-top: 12px; letter-spacing: 0.25em; font-size: 0.85em; }
+    header p { color: #ff6666; margin-top: 8px; letter-spacing: 0.1em; font-size: 0.85em; font-weight: 400; }
 
     nav {
-      background: #0d0808;
+      background: #0d0000;
       display: flex;
       justify-content: center;
       gap: 40px;
@@ -44,28 +46,28 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid #3a1010;
+      border-bottom: 2px solid #cc0000;
     }
     nav a {
-      color: #aa7777;
+      color: #ff6666;
       text-decoration: none;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       font-size: 0.85em;
       transition: color 0.2s;
     }
-    nav a:hover { color: #ff5555; }
+    nav a:hover { color: #ffffff; }
 
     section {
       max-width: 900px;
-      margin: 70px auto;
+      margin: 60px auto;
       padding: 0 20px;
     }
     section h2 {
-      font-size: 1.3em;
-      letter-spacing: 0.4em;
-      color: #cc4444;
-      border-left: 3px solid #cc2222;
-      padding-left: 14px;
+      font-size: 1.4em;
+      letter-spacing: 0.2em;
+      color: #ff2222;
+      border-left: 4px solid #ff0000;
+      padding-left: 12px;
       margin-bottom: 30px;
       text-transform: uppercase;
     }
@@ -73,66 +75,53 @@
     /* メンバー */
     .members { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
     .member-card {
-      background: #110a0a;
-      border: 1px solid #3a1515;
+      background: #150000;
+      border: 1px solid #440000;
       border-radius: 6px;
       padding: 24px 16px;
       text-align: center;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .member-card:hover { border-color: #cc2222; transform: translateY(-4px); }
-    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; font-weight: bold; }
-    .member-card .birthday { font-size: 0.8em; color: #886666; margin-bottom: 4px; }
-    .member-card .country { font-size: 0.85em; color: #664444; }
+    .member-card:hover { border-color: #ff0000; transform: translateY(-4px); }
+    .member-card .name { font-size: 1.1em; color: #fff; margin-bottom: 8px; }
+    .member-card .birthday { font-size: 0.8em; color: #aa5555; margin-bottom: 4px; font-weight: 400; }
+    .member-card .country { font-size: 0.85em; color: #773333; font-weight: 400; }
 
     /* アルバム */
     .albums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
     .album-card {
-      background: #110a0a;
-      border: 1px solid #3a1515;
+      background: #150000;
+      border: 1px solid #440000;
       border-radius: 6px;
       padding: 24px 20px;
       cursor: pointer;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .album-card:hover { border-color: #cc2222; transform: translateY(-4px); }
-    .album-card .album-type { font-size: 0.72em; color: #884444; letter-spacing: 0.12em; margin-bottom: 10px; text-transform: uppercase; }
-    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 8px; line-height: 1.5; font-weight: bold; }
-    .album-card .date { color: #886666; font-size: 0.8em; }
-    .album-card .hint { color: #553333; font-size: 0.75em; margin-top: 14px; }
-
-    /* イベント */
-    .events { display: flex; flex-direction: column; gap: 12px; }
-    .event-item {
-      background: #110a0a;
-      border: 1px solid #3a1515;
-      border-radius: 6px;
-      padding: 18px 24px;
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      transition: border-color 0.2s;
-    }
-    .event-item:hover { border-color: #cc2222; }
-    .event-item .event-date { color: #cc4444; font-size: 0.85em; min-width: 90px; font-weight: bold; }
-    .event-item .event-name { color: #fff; font-size: 0.95em; }
-    .event-item .event-place { color: #886666; font-size: 0.8em; margin-top: 4px; }
+    .album-card:hover { border-color: #ff0000; transform: translateY(-4px); }
+    .album-card .album-type { font-size: 0.72em; color: #aa3333; letter-spacing: 0.08em; margin-bottom: 10px; text-transform: uppercase; font-weight: 400; }
+    .album-card .title { color: #fff; font-size: 1em; margin-bottom: 8px; line-height: 1.4; }
+    .album-card .date { color: #aa5555; font-size: 0.8em; font-weight: 400; }
+    .album-card .hint { color: #552222; font-size: 0.75em; margin-top: 14px; font-weight: 400; }
 
     footer {
       text-align: center;
       padding: 40px;
-      color: #443333;
+      color: #442222;
       font-size: 0.8em;
-      border-top: 1px solid #1e0a0a;
+      border-top: 1px solid #1e0000;
       margin-top: 60px;
+      font-weight: 400;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>NouerA</h1>
-  <p>ヌエラ　／　OFFICIAL FAN PAGE</p>
+  <img src="IMG_7906.png" alt="NouerA">
+  <div class="header-text">
+    <h1>NouerA</h1>
+    <p>ヌエラ　／ FAN PAGE</p>
+  </div>
 </header>
 
 <nav>
@@ -217,7 +206,7 @@
 <!-- イベント -->
 <section id="events">
   <h2>Events</h2>
-  <p style="color:#553333; font-size:0.9em;">イベント情報は準備中です。</p>
+  <p style="color:#552222; font-size:0.9em; font-weight:400;">イベント情報は準備中です。</p>
 </section>
 
 <footer>
