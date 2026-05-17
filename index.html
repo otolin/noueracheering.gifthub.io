@@ -6,388 +6,147 @@
   <title>NouerA (ヌエラ) FAN PAGE</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0d0000; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
 
-    body {
-      background: #0d0000;
-      color: #e0e0e0;
-      font-family: 'Helvetica Neue', sans-serif;
-      font-weight: 700;
-    }
-
-    /* =============================================
-       ヘッダー
-    ============================================= */
     header { position: relative; text-align: center; }
-    header img.top-photo {
-      width: 100%;
-      max-height: 420px;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-    }
+    header img.top-photo { width: 100%; max-height: 420px; object-fit: cover; object-position: top; display: block; }
     header .header-text {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
+      position: absolute; bottom: 0; left: 0; right: 0;
       padding: 60px 20px 20px;
       background: linear-gradient(transparent, rgba(13,0,0,1));
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: flex; flex-direction: column; align-items: center;
     }
-    header .header-text img.logo {
-      height: 80px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-    }
-    header .header-text p {
-      color: #ff6666;
-      margin-top: 8px;
-      letter-spacing: 0.1em;
-      font-size: 0.8em;
-      font-weight: 400;
-    }
+    header .header-text img.logo { height: 80px; object-fit: contain; filter: brightness(0) invert(1); }
+    header .header-text p { color: #ff6666; margin-top: 8px; letter-spacing: 0.1em; font-size: 0.8em; font-weight: 400; }
 
-    /* =============================================
-       ナビゲーション
-    ============================================= */
     nav {
-      background: #0d0000;
-      display: flex;
-      justify-content: center;
-      gap: 32px;
-      padding: 14px 16px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid #cc0000;
-      flex-wrap: wrap;
+      background: #0d0000; display: flex; justify-content: center; gap: 32px;
+      padding: 14px 16px; position: sticky; top: 0; z-index: 100;
+      border-bottom: 2px solid #cc0000; flex-wrap: wrap;
     }
-    nav a {
-      color: #ff6666;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      font-size: 0.85em;
-      transition: color 0.2s;
-      white-space: nowrap;
-    }
+    nav a { color: #ff6666; text-decoration: none; letter-spacing: 0.1em; font-size: 0.85em; transition: color 0.2s; white-space: nowrap; }
     nav a:hover { color: #ffffff; }
 
-    /* =============================================
-       セクション共通
-    ============================================= */
-    section {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-    section h2 {
-      font-size: 1.3em;
-      letter-spacing: 0.2em;
-      color: #ff2222;
-      border-left: 4px solid #ff0000;
-      padding-left: 12px;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-    }
+    section { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+    section h2 { font-size: 1.3em; letter-spacing: 0.2em; color: #ff2222; border-left: 4px solid #ff0000; padding-left: 12px; margin-bottom: 24px; text-transform: uppercase; }
 
-    /* =============================================
-       メンバー（スマホ：2列、PC：3〜4列対応）
-    ============================================= */
-    .members {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    @media (min-width: 600px) {
-      .members { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (min-width: 800px) {
-      .members { grid-template-columns: repeat(4, 1fr); }
-    }
-    .member-card {
-      background: #150000;
-      border: 1px solid #440000;
-      border-radius: 6px;
-      overflow: hidden;
-      text-align: center;
-      transition: border-color 0.2s, transform 0.2s;
-    }
+    /* メンバー */
+    .members { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (min-width: 600px) { .members { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 800px) { .members { grid-template-columns: repeat(4, 1fr); } }
+    .member-card { background: #150000; border: 1px solid #440000; border-radius: 6px; overflow: hidden; text-align: center; transition: border-color 0.2s, transform 0.2s; }
     .member-card:hover { border-color: #ff0000; transform: translateY(-3px); }
-    .member-card img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-    }
+    .member-card img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; display: block; }
     .member-card .info { padding: 10px 8px; }
     .member-card .name { font-size: 0.95em; color: #fff; margin-bottom: 4px; }
     .member-card .birthday { font-size: 0.72em; color: #aa5555; font-weight: 400; }
     .member-card .country { font-size: 0.72em; color: #773333; font-weight: 400; }
 
-    /* =============================================
-       アルバム（横長1列：左テキスト・右正方形画像）
-    ============================================= */
-    .albums {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+    /* アルバム */
+    .albums { display: flex; flex-direction: column; gap: 14px; }
     .album-card {
-      background: #150000;
-      border: 1px solid #440000;
-      border-radius: 6px;
-      overflow: hidden;
-      cursor: pointer;
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      transition: border-color 0.2s, transform 0.2s;
+      background: #150000; border: 1px solid #440000; border-radius: 6px;
+      overflow: hidden; cursor: pointer; display: flex; flex-direction: row;
+      align-items: stretch; transition: border-color 0.2s, transform 0.2s;
     }
     .album-card:hover { border-color: #ff0000; transform: translateX(4px); }
-    .album-card .album-info {
-      flex: 1;
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 6px;
-    }
-    .album-card img {
-      width: 110px;
-      height: 110px;
-      object-fit: cover;
-      flex-shrink: 0;
-      display: block;
-    }
-    @media (min-width: 500px) {
-      .album-card img { width: 130px; height: 130px; }
-    }
-    .album-card .album-type {
-      font-size: 0.65em;
-      color: #aa3333;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 400;
-    }
+    .album-card .album-info { flex: 1; padding: 18px 20px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+    .album-card img { width: 110px; height: 110px; object-fit: cover; flex-shrink: 0; display: block; }
+    @media (min-width: 500px) { .album-card img { width: 130px; height: 130px; } }
+    .album-card .album-type { font-size: 0.65em; color: #aa3333; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; }
     .album-card .title { color: #fff; font-size: 1em; line-height: 1.4; }
     .album-card .date { color: #aa5555; font-size: 0.75em; font-weight: 400; }
     .album-card .hint { color: #552222; font-size: 0.68em; font-weight: 400; margin-top: 2px; }
 
-    /* =============================================
-       アルバム詳細モーダル
-       ▼ 各アルバムの詳細はJavaScript内の albumData を編集してください
-    ============================================= */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 200;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+    /* モーダル */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
     .modal-overlay.open { display: flex; }
-    .modal {
-      background: #150000;
-      border: 1px solid #660000;
-      border-radius: 8px;
-      max-width: 560px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-    }
-    .modal-close {
-      position: absolute;
-      top: 14px; right: 16px;
-      background: none;
-      border: none;
-      color: #ff4444;
-      font-size: 1.4em;
-      cursor: pointer;
-      line-height: 1;
-    }
-    .modal img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      display: block;
+    .modal { background: #150000; border: 1px solid #660000; border-radius: 8px; max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+    .modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: #ff4444; font-size: 1.4em; cursor: pointer; line-height: 1; z-index: 10; }
+
+    /* MV サムネイルリンク */
+    .modal-mv-thumb {
+      position: relative; display: block; width: 100%;
+      aspect-ratio: 16/9; overflow: hidden;
       border-radius: 8px 8px 0 0;
+      background: #000;
     }
+    .modal-mv-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .modal-mv-thumb:hover img { opacity: 0.7; }
+    .modal-mv-thumb .play-icon {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 64px; height: 64px; background: rgba(204,0,0,0.85);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-mv-thumb:hover .play-icon { background: rgba(255,0,0,1); }
+    .modal-mv-thumb .play-icon::after {
+      content: '';
+      border-style: solid;
+      border-width: 12px 0 12px 22px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 5px;
+    }
+    .modal-mv-label {
+      background: #1e0000; color: #ff6666; font-size: 0.75em; font-weight: 700;
+      text-align: center; padding: 6px; letter-spacing: 0.1em;
+    }
+
     .modal-body { padding: 20px 22px 24px; }
-    .modal-type {
-      font-size: 0.7em;
-      color: #aa3333;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 400;
-      margin-bottom: 6px;
-    }
+    .modal-type { font-size: 0.7em; color: #aa3333; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; margin-bottom: 6px; }
     .modal-title { color: #fff; font-size: 1.2em; margin-bottom: 4px; }
     .modal-date { color: #aa5555; font-size: 0.8em; font-weight: 400; margin-bottom: 16px; }
-    .modal-tracklist { list-style: none; border-top: 1px solid #330000; padding-top: 14px; }
-    .modal-tracklist li {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding: 12px 0;
-      border-bottom: 1px solid #1e0000;
-    }
-    .track-header {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-    .track-num { color: #553333; font-size: 0.75em; min-width: 22px; font-weight: 400; }
-    .track-name { color: #fff; font-size: 0.9em; }
-    .track-apple {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #1e0000;
-      border: 1px solid #550000;
-      border-radius: 4px;
-      padding: 3px 9px;
-      color: #ff6666;
-      text-decoration: none;
-      font-size: 0.68em;
-      font-weight: 400;
-      white-space: nowrap;
-      transition: border-color 0.2s, color 0.2s;
-      flex-shrink: 0;
-    }
-    .track-apple:hover { border-color: #ff0000; color: #fff; }
-    .track-videos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding-left: 32px;
-    }
-    .track-video-btn {
-      display: inline-block;
-      background: #1e0000;
-      border: 1px solid #440000;
-      border-radius: 4px;
-      padding: 3px 10px;
-      color: #aa5555;
-      text-decoration: none;
-      font-size: 0.68em;
-      font-weight: 400;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .track-video-btn:hover { border-color: #ff0000; color: #ff6666; }
 
-    /* =============================================
-       イベント
-    ============================================= */
+    .modal-tracklist { list-style: none; border-top: 1px solid #330000; padding-top: 14px; }
+    .modal-tracklist li { display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-bottom: 1px solid #1e0000; }
+    .track-header { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .track-num { color: #553333; font-size: 0.78em; min-width: 22px; font-weight: 400; }
+    .track-name { color: #fff; font-size: 0.95em; font-weight: 700; flex: 1; }
+
+    /* Apple Music ボタン：目立つ赤 */
+    .track-apple {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: #cc0000; border: none; border-radius: 5px;
+      padding: 5px 12px; color: #fff; text-decoration: none;
+      font-size: 0.75em; font-weight: 700; white-space: nowrap;
+      transition: background 0.2s; flex-shrink: 0;
+    }
+    .track-apple:hover { background: #ff0000; }
+
+    /* 動画ボタン */
+    .track-videos { display: flex; flex-wrap: wrap; gap: 6px; padding-left: 32px; }
+    .track-video-btn {
+      display: inline-block; background: #1e0000; border: 1px solid #550000;
+      border-radius: 4px; padding: 5px 12px; color: #ff6666;
+      text-decoration: none; font-size: 0.75em; font-weight: 700;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .track-video-btn:hover { border-color: #ff0000; color: #fff; }
+
+    /* イベント */
     .events { display: flex; flex-direction: column; gap: 16px; }
-    .event-item {
-      background: #150000;
-      border: 1px solid #440000;
-      border-radius: 6px;
-      padding: 18px 20px;
-      transition: border-color 0.2s;
-    }
+    .event-item { background: #150000; border: 1px solid #440000; border-radius: 6px; padding: 18px 20px; transition: border-color 0.2s; }
     .event-item:hover { border-color: #ff0000; }
-    .event-new {
-      display: inline-block;
-      background: #cc0000;
-      color: #fff;
-      font-size: 0.68em;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-bottom: 10px;
-      letter-spacing: 0.1em;
-    }
-    .event-finished {
-      display: inline-block;
-      background: #2a0000;
-      color: #774444;
-      border: 1px solid #440000;
-      font-size: 0.68em;
-      padding: 2px 8px;
-      border-radius: 3px;
-      margin-bottom: 10px;
-      letter-spacing: 0.1em;
-    }
+    .event-new { display: inline-block; background: #cc0000; color: #fff; font-size: 0.68em; padding: 2px 8px; border-radius: 3px; margin-bottom: 10px; letter-spacing: 0.1em; }
+    .event-finished { display: inline-block; background: #2a0000; color: #774444; border: 1px solid #440000; font-size: 0.68em; padding: 2px 8px; border-radius: 3px; margin-bottom: 10px; letter-spacing: 0.1em; }
     .event-title { color: #fff; font-size: 1em; line-height: 1.5; margin-bottom: 10px; }
     .event-title.finished { color: #664444; }
-    .event-detail {
-      color: #aa5555;
-      font-size: 0.82em;
-      font-weight: 400;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
+    .event-detail { color: #aa5555; font-size: 0.82em; font-weight: 400; line-height: 1.8; margin-bottom: 12px; }
     .event-detail.finished { color: #553333; }
-    .event-link a {
-      color: #ff4444;
-      font-size: 0.82em;
-      font-weight: 400;
-      text-decoration: none;
-      border-bottom: 1px solid #440000;
-      padding-bottom: 2px;
-    }
+    .event-link a { color: #ff4444; font-size: 0.82em; font-weight: 400; text-decoration: none; border-bottom: 1px solid #440000; padding-bottom: 2px; }
     .event-link a:hover { color: #ff8888; }
 
-    /* =============================================
-       SNS リンク
-       ▼ 追加したいSNSはここにリンクを記入してください
-    ============================================= */
-    .sns-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-    .sns-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #150000;
-      border: 1px solid #440000;
-      border-radius: 6px;
-      padding: 10px 18px;
-      color: #ff6666;
-      text-decoration: none;
-      font-size: 0.85em;
-      letter-spacing: 0.08em;
-      transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    }
-    .sns-btn:hover {
-      border-color: #ff0000;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-    .sns-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-      flex-shrink: 0;
-    }
+    /* SNS */
+    .sns-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .sns-btn { display: inline-flex; align-items: center; gap: 8px; background: #150000; border: 1px solid #440000; border-radius: 6px; padding: 10px 18px; color: #ff6666; text-decoration: none; font-size: 0.85em; letter-spacing: 0.08em; transition: border-color 0.2s, color 0.2s, transform 0.2s; }
+    .sns-btn:hover { border-color: #ff0000; color: #fff; transform: translateY(-2px); }
+    .sns-btn svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
 
-    /* =============================================
-       フッター
-    ============================================= */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #442222;
-      font-size: 0.8em;
-      border-top: 1px solid #1e0000;
-      margin-top: 60px;
-      font-weight: 400;
-    }
+    footer { text-align: center; padding: 40px 20px; color: #442222; font-size: 0.8em; border-top: 1px solid #1e0000; margin-top: 60px; font-weight: 400; }
   </style>
 </head>
 <body>
 
-<!-- =============================================
-     ヘッダー画像・ロゴ
-     ▼ 画像ファイル名を変更した場合は src="" を修正してください
-============================================= -->
 <header>
   <img class="top-photo" src="IMG_7906.jpeg" alt="NouerA">
   <div class="header-text">
@@ -403,183 +162,65 @@
   <a href="#sns">SNS</a>
 </nav>
 
-
-<!-- =============================================
-     メンバー
-     ▼ メンバーを追加・変更する場合は下記のブロックをコピー＆ペーストしてください
-============================================= -->
 <section id="members">
   <h2>Members</h2>
   <div class="members">
-
-    <!-- ▼▼▼ メンバー1人分のテンプレート ▼▼▼
-    <div class="member-card">
-      <img src="画像ファイル名.jpeg" alt="メンバー名">
-      <div class="info">
-        <div class="name">メンバー名</div>
-        <div class="birthday">YYYY.MM.DD</div>
-        <div class="country">🇰🇷 国名</div>
-      </div>
-    </div>
-    ▲▲▲ ここまでコピー ▲▲▲ -->
-
-    <div class="member-card">
-      <img src="IMG_7909.jpeg" alt="ギヒョン">
-      <div class="info">
-        <div class="name">ギヒョン</div>
-        <div class="birthday">2003.03.31</div>
-        <div class="country">🇰🇷 韓国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7910.jpeg" alt="ジュンピョ">
-      <div class="info">
-        <div class="name">ジュンピョ</div>
-        <div class="birthday">2003.05.25</div>
-        <div class="country">🇰🇷 韓国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7911.jpeg" alt="ヒョンジュン">
-      <div class="info">
-        <div class="name">ヒョンジュン</div>
-        <div class="birthday">2003.11.29</div>
-        <div class="country">🇰🇷 韓国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7912.jpeg" alt="ユソプ">
-      <div class="info">
-        <div class="name">ユソプ</div>
-        <div class="birthday">2004.05.06</div>
-        <div class="country">🇰🇷 韓国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7913.jpeg" alt="リン">
-      <div class="info">
-        <div class="name">リン</div>
-        <div class="birthday">2006.12.30</div>
-        <div class="country">🇨🇳 中国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7914.jpeg" alt="ファン">
-      <div class="info">
-        <div class="name">ファン</div>
-        <div class="birthday">2007.11.10</div>
-        <div class="country">🇨🇳 中国</div>
-      </div>
-    </div>
-    <div class="member-card">
-      <img src="IMG_7915.jpeg" alt="ミラク">
-      <div class="info">
-        <div class="name">ミラク</div>
-        <div class="birthday">2008.02.13</div>
-        <div class="country">🇯🇵 日本</div>
-      </div>
-    </div>
-
+    <div class="member-card"><img src="IMG_7909.jpeg" alt="ギヒョン"><div class="info"><div class="name">ギヒョン</div><div class="birthday">2003.03.31</div><div class="country">🇰🇷 韓国</div></div></div>
+    <div class="member-card"><img src="IMG_7910.jpeg" alt="ジュンピョ"><div class="info"><div class="name">ジュンピョ</div><div class="birthday">2003.05.25</div><div class="country">🇰🇷 韓国</div></div></div>
+    <div class="member-card"><img src="IMG_7911.jpeg" alt="ヒョンジュン"><div class="info"><div class="name">ヒョンジュン</div><div class="birthday">2003.11.29</div><div class="country">🇰🇷 韓国</div></div></div>
+    <div class="member-card"><img src="IMG_7912.jpeg" alt="ユソプ"><div class="info"><div class="name">ユソプ</div><div class="birthday">2004.05.06</div><div class="country">🇰🇷 韓国</div></div></div>
+    <div class="member-card"><img src="IMG_7913.jpeg" alt="リン"><div class="info"><div class="name">リン</div><div class="birthday">2006.12.30</div><div class="country">🇨🇳 中国</div></div></div>
+    <div class="member-card"><img src="IMG_7914.jpeg" alt="ファン"><div class="info"><div class="name">ファン</div><div class="birthday">2007.11.10</div><div class="country">🇨🇳 中国</div></div></div>
+    <div class="member-card"><img src="IMG_7915.jpeg" alt="ミラク"><div class="info"><div class="name">ミラク</div><div class="birthday">2008.02.13</div><div class="country">🇯🇵 日本</div></div></div>
   </div>
 </section>
 
-
-<!-- =============================================
-     アルバム
-     ▼ アルバムを追加する場合は下記のブロックをコピー＆ペーストしてください
-     ▼ data-album="" の番号は JavaScript の albumData と一致させてください
-============================================= -->
 <section id="albums">
   <h2>Albums</h2>
   <div class="albums">
-
-    <!-- ▼▼▼ アルバム1枚分のテンプレート ▼▼▼
-    <div class="album-card" data-album="5" onclick="openAlbum(5)">
-      <div class="album-info">
-        <div class="album-type">Xth Mini Album</div>
-        <div class="title">アルバムタイトル</div>
-        <div class="date">YYYY.MM.DD Release</div>
-        <div class="hint">▶ タップで詳細へ</div>
-      </div>
-      <img src="画像ファイル名.jpeg" alt="アルバムタイトル">
-    </div>
-    ▲▲▲ ここまでコピー ▲▲▲ -->
-
-    <div class="album-card" data-album="1" onclick="openAlbum(1)">
-      <div class="album-info">
-        <div class="album-type">1st Digital Single</div>
-        <div class="title">무한대（無限大）</div>
-        <div class="date">2024.12.14 Release</div>
-        <div class="hint">▶ タップで詳細へ</div>
-      </div>
-      <img src="IMG_7927.jpeg" alt="무한대">
-    </div>
-    <div class="album-card" data-album="2" onclick="openAlbum(2)">
-      <div class="album-info">
-        <div class="album-type">1st Mini Album</div>
-        <div class="title">Chapter: New is Now</div>
-        <div class="date">2025.02.26 Release</div>
-        <div class="hint">▶ タップで詳細へ</div>
-      </div>
-      <img src="IMG_7928.jpeg" alt="Chapter: New is Now">
-    </div>
-    <div class="album-card" data-album="3" onclick="openAlbum(3)">
-      <div class="album-info">
-        <div class="album-type">2nd Mini Album</div>
-        <div class="title">n: number of cases</div>
-        <div class="date">2025.06.30 Release</div>
-        <div class="hint">▶ タップで詳細へ</div>
-      </div>
-      <img src="IMG_7929.jpeg" alt="n: number of cases">
-    </div>
-    <div class="album-card" data-album="4" onclick="openAlbum(4)">
+    <!-- 降順（新しい順） -->
+    <div class="album-card" onclick="openAlbum(4)">
       <div class="album-info">
         <div class="album-type">3rd Mini Album</div>
         <div class="title">POP IT LIKE</div>
         <div class="date">2026.03.09 Release</div>
-        <div class="hint">▶ タップで詳細へ</div>
+        <div class="hint">▶ タップで詳細・MV</div>
       </div>
       <img src="IMG_7930.jpeg" alt="POP IT LIKE">
     </div>
-
+    <div class="album-card" onclick="openAlbum(3)">
+      <div class="album-info">
+        <div class="album-type">2nd Mini Album</div>
+        <div class="title">n: number of cases</div>
+        <div class="date">2025.06.30 Release</div>
+        <div class="hint">▶ タップで詳細・MV</div>
+      </div>
+      <img src="IMG_7929.jpeg" alt="n: number of cases">
+    </div>
+    <div class="album-card" onclick="openAlbum(2)">
+      <div class="album-info">
+        <div class="album-type">1st Mini Album</div>
+        <div class="title">Chapter: New is Now</div>
+        <div class="date">2025.02.26 Release</div>
+        <div class="hint">▶ タップで詳細・MV</div>
+      </div>
+      <img src="IMG_7928.jpeg" alt="Chapter: New is Now">
+    </div>
+    <div class="album-card" onclick="openAlbum(1)">
+      <div class="album-info">
+        <div class="album-type">1st Digital Single</div>
+        <div class="title">무한대（無限大）</div>
+        <div class="date">2024.12.14 Release</div>
+        <div class="hint">▶ タップで詳細・MV</div>
+      </div>
+      <img src="IMG_7927.jpeg" alt="무한대">
+    </div>
   </div>
 </section>
 
-
-<!-- =============================================
-     EVENTS in JAPAN
-     ▼ イベントを追加する場合は下記のブロックをコピー＆ペーストしてください
-     ▼ 過去のイベントは <span class="event-new">NEW</span> を
-       <span class="event-finished">FINISHED</span> に変えてください
-     ▼ タイトルと詳細にも class="finished" を追加すると文字色が暗くなります
-============================================= -->
 <section id="events">
   <h2>Events in Japan</h2>
   <div class="events">
-
-    <!-- ▼▼▼ 予定イベントのテンプレート ▼▼▼
-    <div class="event-item">
-      <span class="event-new">NEW</span>
-      <div class="event-title">イベントタイトル</div>
-      <div class="event-detail">
-        YYYY年M月D日(曜) @会場名<br>
-        ●開場 XX:XX　開演 XX:XX<br><br>
-        チケット情報など
-      </div>
-      <div class="event-link">
-        <a href="URL" target="_blank">詳しくはこちら →</a>
-      </div>
-    </div>
-    ▲▲▲ ここまでコピー ▲▲▲ -->
-
-    <!-- ▼▼▼ 終了イベントのテンプレート ▼▼▼
-    <div class="event-item">
-      <span class="event-finished">FINISHED</span>
-      <div class="event-title finished">イベントタイトル</div>
-      <div class="event-detail finished">YYYY年M月D日(曜)</div>
-    </div>
-    ▲▲▲ ここまでコピー ▲▲▲ -->
-
     <div class="event-item">
       <span class="event-new">NEW</span>
       <div class="event-title">'CATCH THE WAVE' WORLD TOUR in JAPAN 開催決定</div>
@@ -589,102 +230,73 @@
         ●第2部 19:00開演<br><br>
         5月15日(金)よりFC最速先行受付スタート！
       </div>
-      <div class="event-link">
-        <a href="https://nouera-official.jp/news/detail/78664" target="_blank" rel="noopener">詳しくはこちら →</a>
-      </div>
+      <div class="event-link"><a href="https://nouera-official.jp/news/detail/78664" target="_blank" rel="noopener">詳しくはこちら →</a></div>
     </div>
-
     <div class="event-item">
       <span class="event-finished">FINISHED</span>
       <div class="event-title finished">Kstyle PARTY 2026 出演</div>
       <div class="event-detail finished">2026年5月9日(土)</div>
     </div>
-
     <div class="event-item">
       <span class="event-finished">FINISHED</span>
       <div class="event-title finished">[POP IT LIKE] 発売記念タワーレコード限定イベント</div>
       <div class="event-detail finished">2026年5月8日(金)、10日(日)</div>
     </div>
-
   </div>
 </section>
 
-
-<!-- =============================================
-     SNS リンク
-     ▼ href="" に各SNSのURLを貼り付けてください
-     ▼ 不要なリンクは <a>〜</a> ごと削除してください
-============================================= -->
 <section id="sns">
   <h2>SNS</h2>
   <div class="sns-links">
-
     <a class="sns-btn" href="https://x.com/NouerA_official" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.733-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       X (Twitter)
     </a>
-
     <a class="sns-btn" href="https://www.youtube.com/@NouerA_official" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
       YouTube
     </a>
-
     <a class="sns-btn" href="https://www.instagram.com/nouera_official" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       Instagram
     </a>
-
     <a class="sns-btn" href="https://nouera-official.jp" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
       公式サイト
     </a>
-
   </div>
 </section>
 
-
-<!-- アルバム詳細モーダル（自動生成されます・直接編集不要） -->
+<!-- モーダル -->
 <div class="modal-overlay" id="albumModal" onclick="closeAlbumOnOverlay(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeAlbum()">✕</button>
-    <img id="modal-img" src="" alt="">
+    <a id="modal-mv-link" href="" target="_blank" rel="noopener" class="modal-mv-thumb">
+      <img id="modal-mv-img" src="" alt="">
+      <div class="play-icon"></div>
+    </a>
+    <div class="modal-mv-label">▶ タップでMV / メインビデオを視聴</div>
     <div class="modal-body">
       <div class="modal-type" id="modal-type"></div>
       <div class="modal-title" id="modal-title"></div>
       <div class="modal-date" id="modal-date"></div>
       <ul class="modal-tracklist" id="modal-tracklist"></ul>
-      <div class="modal-links" id="modal-links"></div>
     </div>
   </div>
 </div>
 
-
-<footer>
-  © 2025 NouerA FAN PAGE　／　This is an unofficial fan site.
-</footer>
-
+<footer>© 2025 NouerA FAN PAGE　／　This is an unofficial fan site.</footer>
 
 <script>
-/* ==============================================
-   アルバム詳細データ
-   ▼ 各アルバムの曲目・リンクをここで編集してください
-   ▼ 新しいアルバムを追加するときは { id: 5, ... } のブロックをコピーして追記します
-============================================== */
-/* ==============================================
-   トラックデータ構造：
-   { name: "曲名", apple: "Apple MusicのURL", videos: [ {label: "Music Video", url: "..."}, ... ] }
-   apple や videos は省略可（不要なら削除してOK）
-============================================== */
 const albumData = {
   1: {
-    img:   "IMG_7927.jpeg",
+    mv:    "https://youtu.be/zyv3yLIr1WM?si=vkPOc2K62AjWw2Pf",
+    mvThumb: "https://img.youtube.com/vi/zyv3yLIr1WM/hqdefault.jpg",
     type:  "1st Digital Single",
     title: "무한대（無限大）",
     date:  "2024.12.14 Release",
     tracks: [
-      {
-        name: "MU",
-        apple: "https://music.apple.com/jp/song/mu/1783676413",
+      { name: "MU", apple: "https://music.apple.com/jp/song/mu/1783676413",
         videos: [
           { label: "Performance Video", url: "https://youtu.be/zyv3yLIr1WM?si=H42DLJZfJnDU1Fsu" },
           { label: "Stage Video",       url: "https://youtu.be/JhxGK5FkWkA?si=enakUWaGlYqIV-Lx" },
@@ -694,110 +306,80 @@ const albumData = {
     ]
   },
   2: {
-    img:   "IMG_7928.jpeg",
+    mv:    "https://youtu.be/nfI7SX5n03c?si=zzexte7Kvcp11Wrj",
+    mvThumb: "https://img.youtube.com/vi/nfI7SX5n03c/hqdefault.jpg",
     type:  "1st Mini Album",
     title: "Chapter: New is Now",
     date:  "2025.02.26 Release",
     tracks: [
-      {
-        name: "Sparkle",
-        apple: "https://music.apple.com/jp/song/sparkle/1797439210",
+      { name: "Sparkle", apple: "https://music.apple.com/jp/song/sparkle/1797439210",
         videos: [
           { label: "Stage Video",    url: "https://youtu.be/72Kf7tJpiDg?si=we_wtytH4ZEmzAJ7" },
           { label: "Practice Video", url: "https://youtu.be/ItJJ6af9voc?si=KWwzpn0ooDlGwHbG" }
         ]
       },
-      {
-        name: "N.I.N（New is Now）",
-        apple: "https://music.apple.com/jp/song/n-i-n-new-is-now/1797439212",
+      { name: "N.I.N（New is Now）", apple: "https://music.apple.com/jp/song/n-i-n-new-is-now/1797439212",
         videos: [
           { label: "Music Video",    url: "https://youtu.be/nfI7SX5n03c?si=h93fIXc9aoknvdQ3" },
           { label: "Stage Video",    url: "https://youtu.be/YnGEXCBfi1g?si=12f-L5GWkQezg1Mk" },
           { label: "Practice Video", url: "https://youtu.be/c7nsSbjTq4s?si=mJTSW8ZaoFI5drfY" }
         ]
       },
-      {
-        name: "Bring the Crunk",
-        apple: "https://music.apple.com/jp/song/bring-the-crunk/1797439213",
+      { name: "Bring the Crunk", apple: "https://music.apple.com/jp/song/bring-the-crunk/1797439213",
         videos: [
           { label: "Stage Video",    url: "https://youtu.be/0Fg-tq2zJoA?si=TtQzLGI4IbaLeZVE" },
           { label: "Practice Video", url: "https://youtu.be/i2eC-uiJJwQ?si=m7uqlDQGrRGBMjOd" }
         ]
       },
-      {
-        name: "MU",
-        apple: "https://music.apple.com/jp/song/mu/1797439215"
-      },
-      {
-        name: "Jet Stream",
-        apple: "https://music.apple.com/jp/song/jet-stream/1797439216"
-      },
-      {
-        name: "Pairing",
-        apple: "https://music.apple.com/jp/song/pairing/1797439217",
-        videos: [
-          { label: "Stage Video", url: "https://youtu.be/XmO6EvOFf5I?si=O7C9lXmtMkjDgxNS" }
-        ]
+      { name: "MU",        apple: "https://music.apple.com/jp/song/mu/1797439215" },
+      { name: "Jet Stream", apple: "https://music.apple.com/jp/song/jet-stream/1797439216" },
+      { name: "Pairing",   apple: "https://music.apple.com/jp/song/pairing/1797439217",
+        videos: [{ label: "Stage Video", url: "https://youtu.be/XmO6EvOFf5I?si=O7C9lXmtMkjDgxNS" }]
       }
     ]
   },
   3: {
-    img:   "IMG_7929.jpeg",
+    mv:    "https://youtu.be/uVFoKBZh3tU?si=JZBxqtKnT89OagUs",
+    mvThumb: "https://img.youtube.com/vi/uVFoKBZh3tU/hqdefault.jpg",
     type:  "2nd Mini Album",
     title: "n: number of cases",
     date:  "2025.06.30 Release",
     tracks: [
-      {
-        name: "MYSELF",
-        apple: "https://music.apple.com/jp/song/myself/1821576844",
+      { name: "MYSELF", apple: "https://music.apple.com/jp/song/myself/1821576844",
         videos: [
           { label: "Track Video", url: "https://youtu.be/hRQR93X0Sqg?si=MhcVwJp9U-qamE-s" },
           { label: "Stage Video", url: "https://youtu.be/hrU7aSZjjYc?si=ZuPQxg3be2LqEWa-" }
         ]
       },
-      {
-        name: "n（number of cases）",
-        apple: "https://music.apple.com/jp/song/n-number-of-cases/1821576847",
+      { name: "n（number of cases）", apple: "https://music.apple.com/jp/song/n-number-of-cases/1821576847",
         videos: [
-          { label: "Music Video",        url: "https://youtu.be/uVFoKBZh3tU?si=LPdjuow8CpYe9fDw" },
-          { label: "Stage Video",        url: "https://youtu.be/00DQODXjgHA?si=OQ8Lo1iIrtLxZn4u" },
-          { label: "Performance Video",  url: "https://youtu.be/NKrLz9x34lA?si=vjLpB28qMKGqZ8dc" },
-          { label: "Practice Video",     url: "https://youtu.be/o7oyOTUM19Q?si=aVtjZprJXB27LYKA" }
+          { label: "Music Video",       url: "https://youtu.be/uVFoKBZh3tU?si=LPdjuow8CpYe9fDw" },
+          { label: "Stage Video",       url: "https://youtu.be/00DQODXjgHA?si=OQ8Lo1iIrtLxZn4u" },
+          { label: "Performance Video", url: "https://youtu.be/NKrLz9x34lA?si=vjLpB28qMKGqZ8dc" },
+          { label: "Practice Video",    url: "https://youtu.be/o7oyOTUM19Q?si=aVtjZprJXB27LYKA" }
         ]
       },
-      {
-        name: "MAKE YOU MOVE",
-        apple: "https://music.apple.com/jp/song/make-you-move/1821576849"
-      },
-      {
-        name: "WARNING！",
-        apple: "https://music.apple.com/jp/song/warning/1821576851"
-      },
-      {
-        name: "FINALE",
-        apple: "https://music.apple.com/jp/song/finale/1821576853"
-      },
-      {
-        name: "BNB（Beauty and the Beast）",
-        apple: "https://music.apple.com/jp/song/bnb-beauty-and-the-beast/1821576856",
+      { name: "MAKE YOU MOVE", apple: "https://music.apple.com/jp/song/make-you-move/1821576849" },
+      { name: "WARNING！",      apple: "https://music.apple.com/jp/song/warning/1821576851" },
+      { name: "FINALE",         apple: "https://music.apple.com/jp/song/finale/1821576853" },
+      { name: "BNB（Beauty and the Beast）", apple: "https://music.apple.com/jp/song/bnb-beauty-and-the-beast/1821576856",
         videos: [
-          { label: "Performance Video",  url: "https://youtu.be/YBmM1uAJKiQ?si=i8gClT0IP1Sx9IxQ" },
-          { label: "NouerA-LOG Ver.",    url: "https://youtu.be/OXJyffb0Ybc?si=vGR2hbfstMKW5qEp" },
-          { label: "Stage Video",        url: "https://youtu.be/3G-veIXVGgA?si=hAZ2I2PcpogZbJXU" },
-          { label: "Practice Video",     url: "https://youtu.be/rcgei-XUQFY?si=I4iIVzQn_s7G9In8" }
+          { label: "Performance Video", url: "https://youtu.be/YBmM1uAJKiQ?si=i8gClT0IP1Sx9IxQ" },
+          { label: "NouerA-LOG Ver.",   url: "https://youtu.be/OXJyffb0Ybc?si=vGR2hbfstMKW5qEp" },
+          { label: "Stage Video",       url: "https://youtu.be/3G-veIXVGgA?si=hAZ2I2PcpogZbJXU" },
+          { label: "Practice Video",    url: "https://youtu.be/rcgei-XUQFY?si=I4iIVzQn_s7G9In8" }
         ]
       }
     ]
   },
   4: {
-    img:   "IMG_7930.jpeg",
+    mv:    "https://youtu.be/FeU8m9YEVSY?si=itsb1VGzCDU0yPH7",
+    mvThumb: "https://img.youtube.com/vi/FeU8m9YEVSY/hqdefault.jpg",
     type:  "3rd Mini Album",
     title: "POP IT LIKE",
     date:  "2026.03.09 Release",
     tracks: [
-      {
-        name: "POP IT LIKE",
-        apple: "https://music.apple.com/jp/song/pop-it-like/1880322071",
+      { name: "POP IT LIKE", apple: "https://music.apple.com/jp/song/pop-it-like/1880322071",
         videos: [
           { label: "Music Video",       url: "https://youtu.be/FeU8m9YEVSY?si=DU2u1zvmQul3Kf5j" },
           { label: "Performance Video", url: "https://youtu.be/VCnwGcng23s?si=8lVpAYz6s_5vSgId" },
@@ -805,21 +387,14 @@ const albumData = {
           { label: "Practice Video",    url: "https://youtu.be/fbnV-Xr7ho0?si=NzaeoGFhAtPD11BY" }
         ]
       },
-      {
-        name: "SILHOUETTE",
-        apple: "https://music.apple.com/jp/song/silhouette/1880322074"
-      },
-      {
-        name: "A-LIST",
-        apple: "https://music.apple.com/jp/song/a-list/1880322075",
+      { name: "SILHOUETTE", apple: "https://music.apple.com/jp/song/silhouette/1880322074" },
+      { name: "A-LIST", apple: "https://music.apple.com/jp/song/a-list/1880322075",
         videos: [
           { label: "Performance Video", url: "https://youtu.be/2XWrVeqB3mg?si=yMyH5yx6b-4anrwK" },
           { label: "Stage Video",       url: "https://youtu.be/KsorjK95rog?si=nhm5Wnp4h_tQFPW7" }
         ]
       },
-      {
-        name: "WE ARE YOUNG",
-        apple: "https://music.apple.com/jp/song/we-are-young/1880322077",
+      { name: "WE ARE YOUNG", apple: "https://music.apple.com/jp/song/we-are-young/1880322077",
         videos: [
           { label: "Track Video", url: "https://youtu.be/VLoJtXH1a9I?si=QawDXNNUJ5Iyn_Rh" },
           { label: "Stage Video", url: "https://youtu.be/BUqkyDGWpR8?si=pEx8im6qWt2VaBON" }
@@ -827,74 +402,47 @@ const albumData = {
       }
     ]
   }
-  /* ▼ 新アルバムを追加する場合はここにコピー
-  ,5: {
-    img:   "画像ファイル名.jpeg",
-    type:  "Xth Mini Album",
-    title: "タイトル",
-    date:  "YYYY.MM.DD Release",
-    tracks: [
-      { name: "曲名", apple: "https://...", videos: [{ label: "Music Video", url: "https://..." }] }
-    ]
-  }
-  */
 };
 
-/* ── モーダル開閉（編集不要） ── */
 function openAlbum(id) {
   const d = albumData[id];
   if (!d) return;
-  document.getElementById("modal-img").src   = d.img;
-  document.getElementById("modal-img").alt   = d.title;
+  document.getElementById("modal-mv-link").href = d.mv;
+  document.getElementById("modal-mv-img").src   = d.mvThumb;
+  document.getElementById("modal-mv-img").alt   = d.title;
   document.getElementById("modal-type").textContent  = d.type;
   document.getElementById("modal-title").textContent = d.title;
   document.getElementById("modal-date").textContent  = d.date;
 
   const tl = document.getElementById("modal-tracklist");
   tl.innerHTML = "";
-  document.getElementById("modal-links").innerHTML = "";
-
-  if (!d.tracks || d.tracks.length === 0) {
+  d.tracks.forEach((t, i) => {
     const li = document.createElement("li");
-    li.style.cssText = "color:#553333;font-size:0.8em;font-weight:400;";
-    li.textContent = "トラックリスト準備中";
+    const header = document.createElement("div");
+    header.className = "track-header";
+    header.innerHTML = `<span class="track-num">${String(i+1).padStart(2,"0")}</span><span class="track-name">${t.name}</span>`;
+    if (t.apple) {
+      const ap = document.createElement("a");
+      ap.href = t.apple; ap.target = "_blank"; ap.rel = "noopener";
+      ap.className = "track-apple";
+      ap.textContent = "♪ Apple Music";
+      header.appendChild(ap);
+    }
+    li.appendChild(header);
+    if (t.videos && t.videos.length > 0) {
+      const vw = document.createElement("div");
+      vw.className = "track-videos";
+      t.videos.forEach(v => {
+        const a = document.createElement("a");
+        a.href = v.url; a.target = "_blank"; a.rel = "noopener";
+        a.className = "track-video-btn";
+        a.textContent = "▶ " + v.label;
+        vw.appendChild(a);
+      });
+      li.appendChild(vw);
+    }
     tl.appendChild(li);
-  } else {
-    d.tracks.forEach((t, i) => {
-      const li = document.createElement("li");
-
-      // 曲名ヘッダー行
-      const header = document.createElement("div");
-      header.className = "track-header";
-      header.innerHTML = `<span class="track-num">${String(i+1).padStart(2,"0")}</span><span class="track-name">${t.name}</span>`;
-
-      // Apple Music ボタン
-      if (t.apple) {
-        const ap = document.createElement("a");
-        ap.href = t.apple; ap.target = "_blank"; ap.rel = "noopener";
-        ap.className = "track-apple";
-        ap.innerHTML = "♪ Apple Music";
-        header.appendChild(ap);
-      }
-      li.appendChild(header);
-
-      // 動画リンク
-      if (t.videos && t.videos.length > 0) {
-        const vw = document.createElement("div");
-        vw.className = "track-videos";
-        t.videos.forEach(v => {
-          const a = document.createElement("a");
-          a.href = v.url; a.target = "_blank"; a.rel = "noopener";
-          a.className = "track-video-btn";
-          a.textContent = "▶ " + v.label;
-          vw.appendChild(a);
-        });
-        li.appendChild(vw);
-      }
-
-      tl.appendChild(li);
-    });
-  }
+  });
 
   document.getElementById("albumModal").classList.add("open");
   document.body.style.overflow = "hidden";
@@ -908,6 +456,5 @@ function closeAlbumOnOverlay(e) {
 }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeAlbum(); });
 </script>
-
 </body>
 </html>
