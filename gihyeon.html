@@ -7,7 +7,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0d0000; color: #e0e0e0; font-family: 'Helvetica Neue', sans-serif; font-weight: 700; }
-
     header { background: #0d0000; border-bottom: 2px solid #cc0000; padding: 16px 20px; display: flex; align-items: center; gap: 16px; position: sticky; top: 0; z-index: 100; }
     header a { color: #ff6666; text-decoration: none; font-size: 0.85em; letter-spacing: 0.1em; }
     header a:hover { color: #fff; }
@@ -29,9 +28,34 @@
 
     h2 { font-size: 1.1em; letter-spacing: 0.2em; color: #ff2222; border-left: 4px solid #ff0000; padding-left: 12px; margin-bottom: 16px; text-transform: uppercase; }
 
+    /* 写真グリッド */
     .photo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-bottom: 50px; }
     .photo-grid img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: top; display: block; border-radius: 4px; border: 1px solid #2a0000; cursor: pointer; transition: opacity 0.2s, border-color 0.2s; }
     .photo-grid img:hover { opacity: 0.8; border-color: #ff0000; }
+
+    /* 動画共通 */
+    .video-thumb {
+      position: relative; display: block;
+      border-radius: 6px; overflow: hidden;
+      border: 1px solid #2a0000;
+      background: #000;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .video-thumb:hover { border-color: #ff0000; transform: translateY(-3px); }
+    .video-thumb img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; transition: opacity 0.2s; }
+    .video-thumb:hover img { opacity: 0.7; }
+    .video-thumb .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: rgba(204,0,0,0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .video-thumb:hover .play-icon { background: rgba(255,0,0,1); }
+    .video-thumb .play-icon::after { content: ''; border-style: solid; border-width: 8px 0 8px 15px; border-color: transparent transparent transparent #fff; margin-left: 3px; }
+    .video-thumb .video-label { padding: 8px 10px; font-size: 0.78em; color: #e0e0e0; font-weight: 700; background: #150000; }
+
+    /* Solo Video：1カラム */
+    .solo-video { margin-bottom: 50px; }
+
+    /* FanCam・MAKEMATE1：2カラム */
+    .video-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 50px; }
 
     /* ライトボックス */
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 300; align-items: center; justify-content: center; }
@@ -64,6 +88,7 @@
     </div>
   </div>
 
+  <!-- PHOTOS -->
   <h2>Photos</h2>
   <div class="photo-grid">
     <img src="IMG_7940.jpeg" alt="ギヒョン" onclick="openLightbox(this.src)">
@@ -78,8 +103,84 @@
     <img src="IMG_8004.jpeg" alt="ギヒョン" onclick="openLightbox(this.src)">
   </div>
 
+  <!-- SOLO VIDEO -->
+  <h2>Solo Video</h2>
+  <div class="solo-video">
+    <a class="video-thumb" href="https://youtu.be/ogRX7JIvV6U?si=jchl7KZy3hXLQv3N" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/ogRX7JIvV6U/hqdefault.jpg" alt="Solo Video">
+      <div class="play-icon"></div>
+      <div class="video-label">ギヒョン Solo Video</div>
+    </a>
+  </div>
+
+  <!-- FAN CAM -->
+  <h2>Fan Cam</h2>
+  <div class="video-grid-2">
+    <a class="video-thumb" href="https://youtu.be/jtwjwKMWnBI?si=42beRUhLSk4cLdi6" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/jtwjwKMWnBI/hqdefault.jpg" alt="POP IT LIKE">
+      <div class="play-icon"></div>
+      <div class="video-label">POP IT LIKE</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/grWxhpuocgk?si=SZCteje7QN043krb" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/grWxhpuocgk/hqdefault.jpg" alt="n">
+      <div class="play-icon"></div>
+      <div class="video-label">n</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/4YNuGI2YWKQ?si=YcT4uHUv6kZokmji" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/4YNuGI2YWKQ/hqdefault.jpg" alt="N.I.N">
+      <div class="play-icon"></div>
+      <div class="video-label">N.I.N</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/BF32iTK8F5s?si=gNfOHlMgxWlVquws" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/BF32iTK8F5s/hqdefault.jpg" alt="MU">
+      <div class="play-icon"></div>
+      <div class="video-label">MU</div>
+    </a>
+  </div>
+
+  <!-- MAKEMATE1 -->
+  <h2>MAKEMATE1</h2>
+  <div class="video-grid-2">
+    <a class="video-thumb" href="https://youtu.be/rQhI5CGXg6Q?si=rQbYuht3LvY86Upi" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/rQhI5CGXg6Q/hqdefault.jpg" alt="내꺼하자">
+      <div class="play-icon"></div>
+      <div class="video-label">내꺼하자</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/nY9gxNfsqd4?si=304yzxvM1u6sDbJ0" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/nY9gxNfsqd4/hqdefault.jpg" alt="Sherlock">
+      <div class="play-icon"></div>
+      <div class="video-label">Sherlock</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/IgwA7Y9hDWA?si=C49rHqRYMcNP_NVb" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/IgwA7Y9hDWA/hqdefault.jpg" alt="링가 링가">
+      <div class="play-icon"></div>
+      <div class="video-label">링가 링가</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/93KiB3cedN4?si=4D7PUc8hgIisBwvt" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/93KiB3cedN4/hqdefault.jpg" alt="Boy In Luv">
+      <div class="play-icon"></div>
+      <div class="video-label">Boy In Luv</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/lRwdCsoWR5s?si=1-dcMCm5xYJPEonH" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/lRwdCsoWR5s/hqdefault.jpg" alt="Higher Wire">
+      <div class="play-icon"></div>
+      <div class="video-label">Higher Wire</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/_NhcuRzHmC0?si=3ETSB5n9fv9RlBOK" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/_NhcuRzHmC0/hqdefault.jpg" alt="MATE Vlog">
+      <div class="play-icon"></div>
+      <div class="video-label">MATE Vlog</div>
+    </a>
+    <a class="video-thumb" href="https://youtu.be/uy2oCL23IGQ?si=QBwpc2rxXYBM7P0b" target="_blank" rel="noopener">
+      <img src="https://img.youtube.com/vi/uy2oCL23IGQ/hqdefault.jpg" alt="表現力テスト">
+      <div class="play-icon"></div>
+      <div class="video-label">表現力テスト</div>
+    </a>
+  </div>
+
 </div>
 
+<!-- ライトボックス -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightbox-img" src="" alt="">
